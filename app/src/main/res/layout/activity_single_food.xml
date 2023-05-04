@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Background"
+        tools:context=".activities.SingleFood">
+        <View
+            android:id="@+id/divider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="56dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/singlefoodimage"
+            android:layout_width="match_parent"
+            android:layout_height="187dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/singleSupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Supplier Name : "
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singleStartTime" />
+
+        <TextView
+            android:id="@+id/singlefoodAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Address :"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singleSupName" />
+
+        <TextView
+            android:id="@+id/singleStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Opens from "
+
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodDescValue" />
+
+        <TextView
+            android:id="@+id/singlefoodName"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="24dp"
+            android:text="FoodName"
+            android:textColor="#0B0A0A"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodimage" />
+
+        <TextView
+            android:id="@+id/singlefoodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:text="100"
+            android:textColor="#E60F0F"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodName" />
+
+        <TextView
+            android:id="@+id/singlefoodDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Description :"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodPrice" />
+
+        <Button
+            android:id="@+id/butCall"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:backgroundTint="@color/btn"
+            android:text="Call"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contact" />
+
+        <TextView
+            android:id="@+id/singlefoodDescValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Food description"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodDescription" />
+
+        <TextView
+            android:id="@+id/foodQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Quantity"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodAddress" />
+
+        <Button
+            android:id="@+id/btnDecrease"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="@color/btn"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@+id/foodQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodAddress" />
+
+        <TextView
+            android:id="@+id/foodQuantityDigit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="1"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/btnDecrease"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodAddress" />
+
+        <Button
+            android:id="@+id/btnIncrease"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="@color/btn"
+            android:text="+"
+            app:layout_constraintStart_toEndOf="@+id/foodQuantityDigit"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodAddress" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Total : "
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/btnIncrease"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodAddress" />
+
+        <TextView
+            android:id="@+id/singlestartvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 A.M"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/singleStartTime"
+            app:layout_constraintTop_toTopOf="@+id/singleStartTime" />
+
+        <TextView
+            android:id="@+id/singleendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=" Closed at "
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/singlestartvalue"
+            app:layout_constraintTop_toTopOf="@+id/singlestartvalue" />
+
+        <TextView
+            android:id="@+id/singleendvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text=" 11 A.M"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/singleendtime"
+            app:layout_constraintTop_toTopOf="@+id/singleendtime" />
+
+        <TextView
+            android:id="@+id/singleSubValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:text="Smith"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/singleSupName"
+            app:layout_constraintTop_toTopOf="@+id/singleSupName" />
+
+        <TextView
+            android:id="@+id/singleAddressValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="No:26"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/singlefoodAddress"
+            app:layout_constraintTop_toTopOf="@+id/singlefoodAddress" />
+
+        <TextView
+            android:id="@+id/totalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="100"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/total"
+            app:layout_constraintTop_toTopOf="@+id/total" />
+
+        <TextView
+            android:id="@+id/tagPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:text="Rs "
+            android:textColor="#E60F0F"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.404"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlefoodName" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            android:text="Contact : "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodQuantity" />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="077-------"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/contact"
+            app:layout_constraintTop_toTopOf="@+id/contact" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

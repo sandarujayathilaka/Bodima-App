@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.bodima.R
+import com.example.bodima.activities.RecyclerUserFood
 import com.example.bodima.activities.RecyclerUserHouseActivity
 
 class UserProfileFragment : Fragment() {
@@ -22,7 +23,7 @@ class UserProfileFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_user_profile, container, false)
 
         val houseEdit = view.findViewById<ImageView>(R.id.HomeImgEdit)
-
+        val foodEdit = view.findViewById<ImageView>(R.id.foodImgEdit)
         houseEdit.setOnClickListener{
 
             val intent = Intent(activity, RecyclerUserHouseActivity::class.java)
@@ -30,7 +31,12 @@ class UserProfileFragment : Fragment() {
 
         }
 
+        foodEdit.setOnClickListener{
 
+            val intent = Intent(activity, RecyclerUserFood::class.java)
+            startActivity(intent)
+
+        }
 
 
         return view

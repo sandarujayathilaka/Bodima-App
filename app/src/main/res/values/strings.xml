@@ -20,4 +20,53 @@
         <item>Home</item>
     </string-array>
 
+    <string-array name="time">
+        <item></item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="meridium">
+        <item></item>
+        <item>A.M</item>
+        <item>P.M</item>
+    </string-array>
+
+
+    <string-array name="category">
+        <item></item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snacks and juices</item>
+    </string-array>
+
+    <string-array name="type">
+        <item></item>
+        <item>Veg</item>
+        <item>Non-Veg</item>
+    </string-array>
+    <string-array name="searchtype">
+        <item>All</item>
+        <item>Veg</item>
+        <item>Non-Veg</item>
+    </string-array>
+
+    <string-array name="allcategory">
+        <item>All</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snacks and juices</item>
+    </string-array>
 </resources>
