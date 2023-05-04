@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Background"
+        tools:context=".activities.EditFoodActivity">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Food Name"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topicadd">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addFood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nobeds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Food Price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/location">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Food Description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nobeds">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:maxLines="5"
+                android:scrollbars="vertical" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Phone Number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/price"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:hint="Price"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/mobile">-->
+
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:id="@+id/pricetext"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content" />-->
+
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/Mobile"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:hint="Mobile"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/price">-->
+
+
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <Spinner
+            android:id="@+id/startTime"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:entries="@array/time"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintStart_toEndOf="@+id/starts"
+            app:layout_constraintTop_toBottomOf="@id/mobile" />
+
+        <Spinner
+            android:id="@+id/startMeridium"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:entries="@array/meridium"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/startTime"
+            app:layout_constraintTop_toBottomOf="@id/mobile" />
+
+        <TextView
+            android:id="@+id/topicadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Edit Your Food"
+            android:textColor="#000000"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/postbtn"
+            android:layout_width="209dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/btn"
+            android:text="UPDATE"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageFood" />
+
+        <TextView
+            android:id="@+id/starts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Start from"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+        <TextView
+            android:id="@+id/ends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="End at"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/starts" />
+
+        <Spinner
+            android:id="@+id/endTime"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/time"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintStart_toEndOf="@+id/ends"
+            app:layout_constraintTop_toBottomOf="@+id/startTime" />
+
+        <Spinner
+            android:id="@+id/endMeridium"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/meridium"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toEndOf="@+id/endTime"
+            app:layout_constraintTop_toBottomOf="@+id/startMeridium" />
+
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="34dp"
+            android:text="Category"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ends" />
+
+        <Spinner
+            android:id="@+id/addCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/category"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintStart_toEndOf="@+id/category"
+            app:layout_constraintTop_toBottomOf="@+id/endTime" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Type"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category" />
+
+        <Spinner
+            android:id="@+id/addType"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/type"
+            app:circularflow_radiusInDP="45dp"
+            app:layout_constraintStart_toEndOf="@+id/type"
+            app:layout_constraintTop_toBottomOf="@+id/addCategory" />
+
+        <ImageView
+            android:id="@+id/imageFood"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/addType"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="@color/btn"
+            android:text="Edit Image"
+            app:cornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

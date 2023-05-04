@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.FoodCategoryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Background">
+
+            <TextView
+                android:id="@+id/topicfoodcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Select your one"
+                android:textColor="#000000"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="@id/topicfoodcategory"
+                app:layout_constraintTop_toBottomOf="@+id/topicfoodcategory">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#E3DADA"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/topicfoodcategory">
+
+
+                    <ImageView
+                        android:id="@+id/breakImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+
+                        app:srcCompat="@drawable/breakfastimage" />
+
+                    <TextView
+                        android:id="@+id/breakName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Breakfast"
+                        android:textColor="#101010"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="@id/breakfast"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#E3DADA"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfast">
+
+
+                    <ImageView
+                        android:id="@+id/lunchImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+
+                        app:srcCompat="@drawable/lun2" />
+
+                    <TextView
+                        android:id="@+id/lunchName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Lunch"
+                        android:textColor="#101010"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="@id/lunch"
+                app:layout_constraintTop_toBottomOf="@+id/lunch">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#E3DADA"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lunch">
+
+
+                    <ImageView
+                        android:id="@+id/dinnerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+
+                        app:srcCompat="@drawable/dinnerimage" />
+
+                    <TextView
+                        android:id="@+id/dinnerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Dinner"
+                        android:textColor="#101010"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/snack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/dinner"
+                app:layout_constraintTop_toBottomOf="@+id/dinner">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#E3DADA"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dinner">
+
+
+                    <ImageView
+                        android:id="@+id/snackImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+
+                        app:srcCompat="@drawable/snacks" />
+
+                    <TextView
+                        android:id="@+id/snackName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Snacks and juices"
+                        android:textColor="#101010"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</ScrollView>

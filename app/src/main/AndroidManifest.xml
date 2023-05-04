@@ -16,6 +16,18 @@
         android:theme="@style/Theme.Bodima"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SingleFood"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RecyclerUserFood"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RecyclerFood"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EditFoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.RecyclerUserHouseActivity"
             android:exported="false" />
         <activity
