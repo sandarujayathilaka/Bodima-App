@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "491054839018",
+    "project_id": "bodimasliit",
+    "storage_bucket": "bodimasliit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491054839018:android:aaec4b123c151a0f479393",
+        "android_client_info": {
+          "package_name": "com.example.bodima"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491054839018-lii5gi8854ceue0d29at3nbdrvai2ntr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2nuEN--Epmv4FWYdUQMOEwfwPa4nmiLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491054839018-lii5gi8854ceue0d29at3nbdrvai2ntr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

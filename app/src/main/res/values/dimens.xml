@@ -1,0 +1,40 @@
+<resources>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="input_field_width">345dp</dimen>
+    <dimen name="add_topic_text_size">34sp</dimen>
+
+    <dimen name="form_label_txt_size">20sp</dimen>
+    <dimen name="form_input_field_padding">7dp</dimen>
+    <dimen name="form_discription_padding">4dp</dimen>
+    <dimen name="form_dis_height">78dp</dimen>
+    <dimen name="form_dis_width">342dp</dimen>
+    <dimen name="form_field_marginStart">16dp</dimen>
+    <dimen name="form_field_margin_top">8dp</dimen>
+    <dimen name="form_field_width">345dp</dimen>
+    <dimen name="form_field_height">54dp</dimen>
+
+    <dimen name="upload_imge_width">48dp</dimen>
+    <dimen name="upload_button_height">48dp</dimen>
+
+    <dimen name="Edit_Ad_text_size">28sp</dimen>
+    <dimen name="edit_item_width">375dp</dimen>
+    <dimen name="edit_item_height">96dp</dimen>
+    <dimen name="edit_item_margin">19dp</dimen>
+    <dimen name="edit_item_margin_end">16dp</dimen>
+    <dimen name="edit_item_margin_top">16dp</dimen>
+    <dimen name="select_cate_txtsize">38sp</dimen>
+    <dimen name="select_cate_width">323dp</dimen>
+    <dimen name="cateText_margin_left">16dp</dimen>
+    <dimen name="cateText_margin_top">50dp</dimen>
+    <dimen name="cate_card_height">100dp</dimen>
+    <dimen name="sub_cate_text_size">28sp</dimen>
+    <dimen name="sub_cat_tst_layout_width">340dp</dimen>
+    <dimen name="subcate_card_height">152dp</dimen>
+
+
+
+
+
+</resources>

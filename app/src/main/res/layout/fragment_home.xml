@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homefrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".fragments.HomeFragment">
+
+    <ImageView
+        android:id="@+id/foodImg"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="264dp"
+        android:src="@drawable/foods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/HomeImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/HomeImg"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="260dp"
+        android:src="@drawable/home"
+        app:layout_constraintEnd_toStartOf="@+id/foodImg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/GroceryImg"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/groceries"
+        app:layout_constraintEnd_toStartOf="@+id/FurnitureImg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeImg" />
+
+    <ImageView
+        android:id="@+id/FurnitureImg"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/furnitures"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/GroceryImg"
+        app:layout_constraintTop_toBottomOf="@+id/foodImg" />
+
+    <TextView
+        android:id="@+id/welcomeTxt"
+        android:layout_width="122dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/welcome"
+        android:textAlignment="textStart"
+        android:textColor="#2E2E2E"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/moto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/moto"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTxt" />
+
+    <ImageView
+        android:id="@+id/HomeMainImg"
+        android:layout_width="249dp"
+        android:layout_height="291dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/housingmainvector"
+        app:layout_constraintStart_toEndOf="@+id/welcomeTxt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/calimg"
+        android:layout_width="152dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/cal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GroceryImg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

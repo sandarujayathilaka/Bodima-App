@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".fragments.InsertItemMainFragment">
+
+    <ImageView
+        android:id="@+id/insertFood"
+        android:layout_width="188dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="336dp"
+        android:src="@drawable/addfood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/insertHome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/insertGrocery"
+        android:layout_width="185dp"
+        android:layout_height="179dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/addgrocery"
+        app:layout_constraintEnd_toStartOf="@+id/insertFurniture"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertHome" />
+
+    <ImageView
+        android:id="@+id/insertFurniture"
+        android:layout_width="184dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/addfurniture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/insertGrocery"
+        app:layout_constraintTop_toBottomOf="@+id/insertFood" />
+
+    <ImageView
+        android:id="@+id/insertHome"
+        android:layout_width="185dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="336dp"
+        android:src="@drawable/addhome"
+        app:layout_constraintEnd_toStartOf="@+id/insertFood"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="289dp"
+        android:layout_height="358dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/fillin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/adText"
+        android:layout_width="267dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/advertisement"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
