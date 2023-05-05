@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="18sp"
+    tools:context=".activities.RecyclerUserGroceryActivity">
+
+    <SearchView
+        android:id="@+id/grocerysearchUser"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/homedropdownUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Type"
+        android:textColor="#040404"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grocerysearchUser" />
+
+    <Spinner
+        android:id="@+id/grocerytypeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="-5dp"
+        android:entries="@array/allGrocery"
+        app:layout_constraintStart_toEndOf="@+id/homedropdownUser"
+        app:layout_constraintTop_toTopOf="@+id/homedropdownUser" />
+
+    <TextView
+        android:id="@+id/homeresultUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Search Result : "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homedropdownUser" />
+
+    <TextView
+        android:id="@+id/groceryresultvalueUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/homeresultUser"
+        app:layout_constraintTop_toTopOf="@+id/homeresultUser" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/grocery_itemUser"
+        android:layout_width="410dp"
+        android:layout_height="541dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeresultUser" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
