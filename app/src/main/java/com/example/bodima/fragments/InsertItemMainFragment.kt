@@ -21,6 +21,7 @@ class InsertItemMainFragment : Fragment() {
 
         val addhouse:ImageView =view.findViewById(R.id.insertHome)
         val addfood:ImageView =view.findViewById(R.id.insertFood)
+        val imgGro: ImageView = view.findViewById(R.id.insertGrocery)
 
         addhouse.setOnClickListener {
             val fragment = HouseAddFragment() // Create an instance of the other fragment you want to open
@@ -36,6 +37,17 @@ class InsertItemMainFragment : Fragment() {
             transaction.replace(R.id.fragmentContainerView, fragment) // Replace the current fragment with the new fragment
             transaction.addToBackStack(null) // Add the transaction to the back stack
             transaction.commit() // Commit the transaction
+        }
+
+
+
+        imgGro.setOnClickListener {
+
+            val fragment = GroceryAddFragment() // Create an instance of the other fragment you want to open
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView, fragment) // Replace the current fragment with the new fragment
+            transaction.addToBackStack(null) // Add the transaction to the back stack
+            transaction.commit() // Commit the transaction.
         }
 
         return view;
