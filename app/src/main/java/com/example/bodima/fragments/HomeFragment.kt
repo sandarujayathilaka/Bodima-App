@@ -22,6 +22,7 @@ class HomeFragment : Fragment() {
         val imgCal: ImageView = view.findViewById(R.id.calimg)
         val imgFood: ImageView = view.findViewById(R.id.foodImg)
         val imgGro: ImageView = view.findViewById(R.id.GroceryImg)
+        val imgFur: ImageView = view.findViewById(R.id.FurnitureImg)
 
         imgHouse.setOnClickListener {
 
@@ -55,6 +56,15 @@ class HomeFragment : Fragment() {
         imgGro.setOnClickListener {
 
             val fragment = GroceryCategoryFragment() // Create an instance of the other fragment you want to open
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView, fragment) // Replace the current fragment with the new fragment
+            transaction.addToBackStack(null) // Add the transaction to the back stack
+            transaction.commit() // Commit the transaction.
+        }
+
+        imgFur.setOnClickListener {
+
+            val fragment = FurnitureCategoryFragment() // Create an instance of the other fragment you want to open
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainerView, fragment) // Replace the current fragment with the new fragment
             transaction.addToBackStack(null) // Add the transaction to the back stack

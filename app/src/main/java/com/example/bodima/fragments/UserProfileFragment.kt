@@ -26,6 +26,7 @@ class UserProfileFragment : Fragment() {
         val houseEdit = view.findViewById<ImageView>(R.id.HomeImgEdit)
         val foodEdit = view.findViewById<ImageView>(R.id.foodImgEdit)
         val GroceryEdit = view.findViewById<ImageView>(R.id.GroceryImgEdit)
+        val FurnitureEdit = view.findViewById<ImageView>(R.id.FurnitureImgEdit)
 
         houseEdit.setOnClickListener{
 
@@ -46,6 +47,13 @@ class UserProfileFragment : Fragment() {
         GroceryEdit.setOnClickListener{
 
             val intent = Intent(activity, RecyclerUserGroceryActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        FurnitureEdit.setOnClickListener{
+
+            val intent = Intent(activity, RecyclerUserHouseActivity::class.java)
             startActivity(intent)
 
         }
