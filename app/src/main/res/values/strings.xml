@@ -69,4 +69,20 @@
         <item>Dinner</item>
         <item>Snacks and juices</item>
     </string-array>
+
+    <string-array name="groceryCategory">
+        <item>Select Category</item>
+        <item>Beverages</item>
+        <item>Dairy</item>
+        <item>Bread</item>
+    </string-array>
+
+    <string-array name="allGrocery">
+        <item>All</item>
+        <item>Beverages</item>
+        <item>Dairy</item>
+        <item>Bread</item>
+    </string-array>
+
+
 </resources>
