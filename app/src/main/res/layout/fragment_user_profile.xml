@@ -54,11 +54,11 @@
 
     <TextView
         android:id="@+id/welcomeTxt"
-        android:layout_width="122dp"
-        android:layout_height="45dp"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="84dp"
-        android:text="@string/welcome"
+        android:text="@string/list"
         android:textAlignment="textStart"
         android:textColor="#2E2E2E"
         android:textSize="34sp"
@@ -72,7 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:text="@string/moto"
+        android:text="@string/listmoto"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTxt" />

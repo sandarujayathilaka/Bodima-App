@@ -36,7 +36,7 @@ class SingleHouseActivity : AppCompatActivity() {
 
         // initialize UI elements
         sintitle = findViewById(R.id.singletitle)
-        sindescription = findViewById(R.id.singlebedrooms)
+        sindescription = findViewById(R.id.singledescription)
         sinbeds = findViewById(R.id.singlebedrooms)
         sinaddress = findViewById(R.id.singleaddress)
         sinbaths = findViewById(R.id.singlebathroom)

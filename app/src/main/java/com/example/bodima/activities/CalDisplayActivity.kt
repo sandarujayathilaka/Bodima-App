@@ -20,9 +20,6 @@ class CalDisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cal_display)
 
-        navHome = findViewById(R.id.homenavcal)
-        navUser = findViewById(R.id.usernavcal)
-        navAdd = findViewById(R.id.addnavcal)
 
         val totalFee = intent.getDoubleExtra("totalfee", 0.0)
         val restFee = intent.getDoubleExtra("restfee", 0.0)
@@ -32,29 +29,6 @@ class CalDisplayActivity : AppCompatActivity() {
 
         val dispalyRestFee = findViewById<TextView>(R.id.restfee)
         dispalyRestFee.text =restFee.toString()
-
-        navAdd.setOnClickListener {
-            navAdd.setImageResource(R.drawable.clickadd)
-            navUser.setImageResource(R.drawable.usernav)
-            navHome.setImageResource(R.drawable.homenav)
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainerView,fragmentItem)
-                addToBackStack(null)
-                commit()
-            }
-        }
-
-        navHome.setOnClickListener {
-            navAdd.setImageResource(R.drawable.navadd)
-            navUser.setImageResource(R.drawable.usernav)
-            navHome.setImageResource(R.drawable.clickedhome)
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentContainerView,fragmentHome)
-                addToBackStack(null)
-                commit()
-            }
-        }
-
 
 
     }
