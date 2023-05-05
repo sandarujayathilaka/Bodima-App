@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="@dimen/select_cate_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cateText_margin_left"
+        android:layout_marginTop="@dimen/cateText_margin_top"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Select a Category"
+        android:textAllCaps="false"
+        android:textColor="#0B0B0B"
+        android:textSize="@dimen/select_cate_txtsize"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/brandnewcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="-25dp"
+        app:cardBackgroundColor="#E3DADA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/annexlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subcate_card_height"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/CAT001"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cate_card_height"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/brandnew" />
+
+            <TextView
+                android:id="@+id/pricetext1"
+                android:layout_width="@dimen/sub_cat_tst_layout_width"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:text="Brand New"
+                android:textAlignment="viewStart"
+                android:textColor="#282828"
+                android:textSize="@dimen/sub_cate_text_size"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/usedcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="#E3DADA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/roomlayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/used" />
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:text="Used"
+                android:textAlignment="viewStart"
+                android:textColor="#282828"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reconditionedcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="#E3DADA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/homelayout"
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/cat003"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/reconditioned" />
+
+            <TextView
+                android:layout_width="347dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:text="Reconditioned"
+                android:textAlignment="viewStart"
+                android:textColor="#282828"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

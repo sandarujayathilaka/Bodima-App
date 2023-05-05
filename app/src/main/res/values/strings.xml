@@ -42,6 +42,16 @@
         <item>P.M</item>
     </string-array>
 
+    <string-array name="furnitureCategory">
+        <item>Select Category</item>
+        <item>Used</item>
+        <item>Brand-new</item>
+        <item>Reconditioned</item>
+    </string-array>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
 
     <string-array name="category">
         <item></item>

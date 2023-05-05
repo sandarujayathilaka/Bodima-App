@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Background"
+        tools:context=".activities.SingleFurnitureActivity">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_butCall" />
+
+        <ImageView
+            android:id="@+id/f_singlefurnitureimage"
+            android:layout_width="match_parent"
+            android:layout_height="187dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home" />
+
+        <TextView
+            android:id="@+id/f_singletitle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="Title"
+            android:textColor="#0B0A0A"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singlefurnitureimage" />
+
+        <TextView
+            android:id="@+id/f_singleaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:text="Address :"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singletitle" />
+
+        <TextView
+            android:id="@+id/f_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="48dp"
+            android:text="Contact :"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singledescription" />
+
+        <Button
+            android:id="@+id/f_butCall"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/pri"
+            android:text="Call"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singledescription" />
+
+        <TextView
+            android:id="@+id/f_singlequantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="Quantity :"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singleaddress" />
+
+        <TextView
+            android:id="@+id/f_singledescription"
+            android:layout_width="372dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:paddingRight="20dp"
+            android:text="Description : "
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/f_butCall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/f_singlequantity" />
+
+        <Button
+            android:id="@+id/f_minus"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/pri"
+            android:text="@string/plus"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/f_singledescription"
+            app:layout_constraintStart_toEndOf="@+id/new_quantity"
+            app:layout_constraintTop_toBottomOf="@+id/f_singleaddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/f_plus"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/pri"
+            android:shadowColor="#653636"
+            android:text="@string/minus"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/f_singlequantity"
+            app:layout_constraintTop_toBottomOf="@+id/f_singleaddress" />
+
+        <TextView
+            android:id="@+id/f_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="Total"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/f_singledescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/f_minus"
+            app:layout_constraintTop_toBottomOf="@+id/f_singleaddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/new_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="28dp"
+            android:text="0"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/f_singledescription"
+            app:layout_constraintStart_toEndOf="@+id/f_plus"
+            app:layout_constraintTop_toBottomOf="@+id/f_singleaddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
