@@ -215,6 +215,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/btn"
             android:text="Calculate"
             app:cornerRadius="45dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -51,6 +51,13 @@
 
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="list">MY LIST</string>
+    <string name="listmoto">Edit with One Click</string>
+    <string name="Rstag">Rs :</string>
+    <string name="price">Price</string>
+    <string name="Location">Location</string>
+    <string name="Title">Title</string>
+    <string name="edittopichome">Edit Place Details</string>
 
 
     <string-array name="category">

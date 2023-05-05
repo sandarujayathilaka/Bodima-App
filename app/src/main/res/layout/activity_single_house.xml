@@ -39,12 +39,24 @@
             android:id="@+id/singlebathroom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="24dp"
             android:text="Bathrooms"
-
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlebedrooms" />
+
+        <TextView
+            android:id="@+id/singlebathroomtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="No of Bathrooms :"
+            android:textStyle="bold"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singlebedrooms" />
 
@@ -71,7 +83,7 @@
             android:textSize="24sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintHorizontal_bias="0.229"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singletitle" />
 
@@ -80,10 +92,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:text="Addres"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singleprice" />
+
+        <TextView
+            android:id="@+id/singleaddresstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:text="Address :"
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singleprice" />
 
@@ -91,11 +116,24 @@
             android:id="@+id/mobile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="Mobile :"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="32dp"
+            android:text="Mobile"
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singledescription" />
+
+        <TextView
+            android:id="@+id/mobiletag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="Mobile :"
+            android:textStyle="bold"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singledescription" />
 
@@ -103,7 +141,7 @@
             android:id="@+id/butCall"
             android:layout_width="200dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/btn"
             android:text="Call"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -118,11 +156,24 @@
             android:id="@+id/singlebedrooms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="24dp"
             android:text="Bedrooms :"
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singleaddress" />
+
+        <TextView
+            android:id="@+id/singlebedroomstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="No Bedrooms :"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singleaddress" />
 
@@ -131,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_marginTop="16dp"
-            android:text="Rs "
+            android:text="Rs : "
             android:textColor="#E60F0F"
             android:textSize="24sp"
             android:textStyle="bold|italic"
@@ -140,19 +191,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singletitle" />
 
+
         <TextView
             android:id="@+id/singledescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="84dp"
+            android:text="Description "
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlebathroomtag" />
+
+        <TextView
+            android:id="@+id/singledescriptiontag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="150dp"
             android:text="Description : "
+            android:textStyle="bold"
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/butCall"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singlebathroom" />
+            app:layout_constraintTop_toBottomOf="@+id/singlebathroom"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

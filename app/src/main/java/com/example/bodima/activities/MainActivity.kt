@@ -2,6 +2,7 @@ package com.example.bodima.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.widget.ImageView
 import com.example.bodima.fragments.HomeFragment
 import com.example.bodima.fragments.InsertItemMainFragment
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         navAdd = findViewById(R.id.addnav)
 
         navAdd.setOnClickListener {
-            navAdd.setImageResource(R.drawable.clickadd)
+            navAdd.setImageResource(R.drawable.clickedbox)
             navUser.setImageResource(R.drawable.usernav)
             navHome.setImageResource(R.drawable.homenav)
             supportFragmentManager.beginTransaction().apply {
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         navHome.setOnClickListener {
-            navAdd.setImageResource(R.drawable.navadd)
+            navAdd.setImageResource(R.drawable.add_box)
             navUser.setImageResource(R.drawable.usernav)
             navHome.setImageResource(R.drawable.clickedhome)
             supportFragmentManager.beginTransaction().apply {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         navUser.setOnClickListener {
-            navAdd.setImageResource(R.drawable.navadd)
+            navAdd.setImageResource(R.drawable.add_box)
             navUser.setImageResource(R.drawable.clickeduser)
             navHome.setImageResource(R.drawable.homenav)
             supportFragmentManager.beginTransaction().apply {

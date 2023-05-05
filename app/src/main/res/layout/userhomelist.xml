@@ -14,7 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="215dp">
 
         <ImageView
             android:id="@+id/house_img_edit"
@@ -33,37 +33,59 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Title :"
+            android:text="@string/Title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/house_img_edit" />
+
 
         <TextView
             android:id="@+id/houseprice_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="52dp"
             android:layout_marginBottom="8dp"
-            android:text="price :"
+            android:text="@string/price"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/housetitle_edit" />
+            app:layout_constraintTop_toBottomOf="@+id/housetitle_edit"
+            app:layout_constraintVertical_bias="0.217" />
+
+        <TextView
+            android:id="@+id/rstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/Rstag"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/housetitle_edit"
+            app:layout_constraintVertical_bias="0.239" />
 
         <TextView
             android:id="@+id/houselocation_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
-            android:text="Location :"
+            android:text="@string/Location"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/house_img_edit"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/houseprice_edit"
+            app:layout_constraintVertical_bias="0.75" />
 
         <ImageView
             android:id="@+id/deletebtn"
@@ -74,7 +96,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/house_img_edit"
-            app:layout_constraintVertical_bias="0.095"
+            app:layout_constraintVertical_bias="0.25"
             app:srcCompat="@drawable/delete_btn" />
 
         <ImageView
@@ -82,11 +104,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/deletebtn"
             app:layout_constraintTop_toBottomOf="@+id/house_img_edit"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.25"
             app:srcCompat="@drawable/edit_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
