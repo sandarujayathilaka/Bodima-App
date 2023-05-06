@@ -58,6 +58,7 @@
     <string name="Location">Location</string>
     <string name="Title">Title</string>
     <string name="edittopichome">Edit Place Details</string>
+    <string name="caltopic">Budget  Calculator</string>
 
 
     <string-array name="category">
