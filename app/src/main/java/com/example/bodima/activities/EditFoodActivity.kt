@@ -14,6 +14,7 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import com.example.bodima.R
 import com.google.firebase.auth.FirebaseAuth
@@ -180,47 +181,93 @@ class EditFoodActivity : AppCompatActivity() {
             }else{
                 foodImage = defaultImage ?:""
             }
+            if (name.isNullOrEmpty()) {
+                findViewById<EditText>(R.id.addFood)?.error = "Please enter the food name"
+            }
+
+            else if (price.isNullOrEmpty()) {
+                findViewById<EditText>(R.id.addPrice)?.error = "Please enter the food price"
+            }
+
+            else if (phone.isNullOrEmpty() || phone.length != 10) {
+                findViewById<EditText>(R.id.addMobile)?.error = "Please enter the mobile number"
+            }
+
+            else if (description.isNullOrEmpty()) {
+                findViewById<EditText>(R.id.EditDesc)?.error = "Please enter the food name"
+            }
+
+            else if (startTime.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select start time", Toast.LENGTH_SHORT).show()
+            }
+
+            else if (startMeridium.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select start meridium", Toast.LENGTH_SHORT).show()
+            }
+
+            else if (endTime.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select end time", Toast.LENGTH_SHORT).show()
+            }
+
+            else if (endMeridium.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select end meridium", Toast.LENGTH_SHORT).show()
+            }
+
+            else if (address.isNullOrEmpty()) {
+                findViewById<EditText>(R.id.addAddress)?.error = "Please enter the address"
+            }
+
+            else if (category.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select a category", Toast.LENGTH_SHORT).show()
+            }
+
+            else if (type.isNullOrEmpty()) {
+                Toast.makeText(this, "Please select a type", Toast.LENGTH_SHORT).show()
+            }
 
 
-            // Create a HashMap to update the data
-            val foodUpdates = hashMapOf<String, Any>(
+            else {
 
-                "foodId" to id!!,
-                "foodName" to name,
-                "foodPrice" to price,
-                "foodDescription" to description,
-                "foodMobile" to phone,
-                "foodStartTime" to startTime,
-                "foodMeridiumStart" to startMeridium,
-                "foodEndTime" to endTime,
-                "foodMeridiumEnd" to endMeridium,
-                "foodAddress" to address,
-                "foodCategory" to category,
-                "foodType" to type,
-                "foodImage" to foodImage,
-                "foodEmail" to userEmail
-            )
+                // Create a HashMap to update the data
+                val foodUpdates = hashMapOf<String, Any>(
 
-            // Update the data in the database
-            foodRef.updateChildren(foodUpdates)
-                .addOnSuccessListener {
-                    // Data updated successfully
-                    Toast.makeText(this, "Food updated successfully", Toast.LENGTH_SHORT).show()
+                    "foodId" to id!!,
+                    "foodName" to name,
+                    "foodPrice" to price,
+                    "foodDescription" to description,
+                    "foodMobile" to phone,
+                    "foodStartTime" to startTime,
+                    "foodMeridiumStart" to startMeridium,
+                    "foodEndTime" to endTime,
+                    "foodMeridiumEnd" to endMeridium,
+                    "foodAddress" to address,
+                    "foodCategory" to category,
+                    "foodType" to type,
+                    "foodImage" to foodImage,
+                    "foodEmail" to userEmail
+                )
+
+                // Update the data in the database
+                foodRef.updateChildren(foodUpdates)
+                    .addOnSuccessListener {
+                        // Data updated successfully
+                        Toast.makeText(this, "Food updated successfully", Toast.LENGTH_SHORT).show()
 
 // Create an Intent to launch the RecyclerFood activity
-                    val intent = Intent(this, RecyclerUserFood::class.java)
+                        val intent = Intent(this, RecyclerUserFood::class.java)
 // Pass the selected category value as an extra
 
-                    startActivity(intent)
-                    finish() // Close the current activity
+                        startActivity(intent)
+                        finish() // Close the current activity
 
 
-                    // finish() // Close the activity
-                }
-                .addOnFailureListener {
-                    // Failed to update the data
-                    Toast.makeText(this, "Failed to update food", Toast.LENGTH_SHORT).show()
-                }
+                        // finish() // Close the activity
+                    }
+                    .addOnFailureListener {
+                        // Failed to update the data
+                        Toast.makeText(this, "Failed to update food", Toast.LENGTH_SHORT).show()
+                    }
+            }
         }
 
 

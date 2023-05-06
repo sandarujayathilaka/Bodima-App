@@ -31,7 +31,7 @@ class RecyclerFood : AppCompatActivity() {
     private lateinit var foodType: Spinner
     private lateinit var resultvalue: TextView
     private lateinit var search: SearchView
-
+    private lateinit var heading: TextView
 
 
     companion object {
@@ -46,12 +46,12 @@ class RecyclerFood : AppCompatActivity() {
         // Get the food type from the intent extras
         foodCategory = intent.getStringExtra("foodCategory") ?: ""
         // val category = intent.getStringExtra("category") ?: ""
-
+        heading = findViewById<TextView>(R.id.heading)
         resultvalue = findViewById<TextView>(R.id.resultvalue)
         foodType = findViewById<Spinner>(R.id.foodtype)
         foodRecyclerView = findViewById(R.id.item_food)
         foodRecyclerView.layoutManager = LinearLayoutManager(this)
-
+        heading.text = foodCategory
         foodRecyclerView.hasFixedSize()
         foodArrayList = arrayListOf()
         tempArrayList = arrayListOf()

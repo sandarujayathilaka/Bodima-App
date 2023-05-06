@@ -25,11 +25,13 @@ import java.io.ByteArrayOutputStream
 //import com.example.bodima.Constants
 import android.Manifest
 import android.widget.ImageView
+import android.widget.TextView
 import com.example.bodima.R
 import com.google.firebase.auth.FirebaseAuth
 
 
 class AddFood : Fragment() {
+
     private  lateinit var foodDbRef: DatabaseReference
     private var _binding: View? = null
 
@@ -37,7 +39,7 @@ class AddFood : Fragment() {
     private val CAMERA_PERMISSION_CODE = 100
     private val CAMERA = 101
     var sImage:String?=""
-
+    private lateinit var succesmsg:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +52,7 @@ class AddFood : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_add_food, container, false)
-
+        succesmsg = view.findViewById<TextView>(R.id.success)
 
         if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_CODE)
@@ -103,6 +105,8 @@ class AddFood : Fragment() {
         _binding = null
     }
 
+
+
     private fun insertFoodData(){
         val firebaseAuth = FirebaseAuth.getInstance()
         val currentUser = firebaseAuth.currentUser
@@ -121,17 +125,26 @@ class AddFood : Fragment() {
         val foodCategory = view?.findViewById<Spinner>(R.id.addCategory)?.selectedItem.toString()
         val foodType = view?.findViewById<Spinner>(R.id.addType)?.selectedItem.toString()
 
+        if(foodName.isNullOrEmpty() || foodDescription.isNullOrEmpty() || foodPrice.isNullOrEmpty() || foodMobile.isNullOrEmpty() || foodMobile.length != 10 ||
+            foodStartTime.isNullOrEmpty() || foodMeridiumStart.isNullOrEmpty() || foodEndTime.isNullOrEmpty() || foodAddress.isNullOrEmpty() ||
+            foodCategory.isNullOrEmpty() || foodType.isNullOrEmpty()){
+            Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+        }
+
         if (foodName.isNullOrEmpty()) {
             requireView().findViewById<EditText>(R.id.addFood)?.error = "Please enter the food name"
         }
-
+        if (foodDescription.isNullOrEmpty()) {
+            requireView().findViewById<EditText>(R.id.addDesc)?.error = "Please enter the food name"
+        }
         if (foodPrice.isNullOrEmpty()) {
             requireView().findViewById<EditText>(R.id.addPrice)?.error = "Please enter the food price"
         }
 
-        if (foodMobile.isNullOrEmpty()) {
-            requireView().findViewById<EditText>(R.id.addMobile)?.error = "Please enter the mobile number"
+        if (foodMobile.isNullOrEmpty() || foodMobile.length != 10) {
+            requireView().findViewById<EditText>(R.id.addMobile)?.error = "Please enter a valid 10 digit mobile number"
         }
+
 
         if (foodStartTime.isNullOrEmpty()) {
             Toast.makeText(requireContext(), "Please select start time", Toast.LENGTH_SHORT).show()
@@ -150,24 +163,60 @@ class AddFood : Fragment() {
         }
 
         if (foodCategory.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select a category", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Please select food category", Toast.LENGTH_SHORT).show()
         }
 
         if (foodType.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select a type", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Please select food type", Toast.LENGTH_SHORT).show()
+        }
+        if (sImage.isNullOrEmpty()) {
+            val imageFood = requireView().findViewById<ImageView>(R.id.imageFood)
+            imageFood.contentDescription = "Please select the image"
         }
 
 
-        val foodId = foodDbRef.push().key!!
 
-        val food = Foods(foodId,foodName,foodPrice,foodDescription,foodMobile,foodStartTime,foodMeridiumStart,foodEndTime,foodMeridiumEnd,foodAddress,foodCategory,foodType,sImage,userEmail)
-        foodDbRef.child(foodId).setValue(food)
-            .addOnCompleteListener{
-                Toast.makeText(requireContext(), "Data inserted", Toast.LENGTH_LONG).show()
-            }.addOnFailureListener{err->
-                Toast.makeText(requireContext(), "Error ${err.message}", Toast.LENGTH_LONG).show()
-            }
-
+        else {
+            val foodId = foodDbRef.push().key!!
+          // validateInput(foodId,foodName,foodPrice,foodDescription,foodMobile,foodStartTime,foodMeridiumStart,foodEndTime,foodMeridiumEnd,foodAddress,foodCategory,foodType,sImage?:"",userEmail)
+            val food = Foods(
+                foodId,
+                foodName,
+                foodPrice,
+                foodDescription,
+                foodMobile,
+                foodStartTime,
+                foodMeridiumStart,
+                foodEndTime,
+                foodMeridiumEnd,
+                foodAddress,
+                foodCategory,
+                foodType,
+                sImage,
+                userEmail
+            )
+            foodDbRef.child(foodId).setValue(food)
+                .addOnCompleteListener {
+                    // Clear the text fields and spinners
+                    view?.findViewById<EditText>(R.id.addFood)?.text?.clear()
+                    view?.findViewById<EditText>(R.id.addPrice)?.text?.clear()
+                    view?.findViewById<EditText>(R.id.addDesc)?.text?.clear()
+                    view?.findViewById<EditText>(R.id.addAddress)?.text?.clear()
+                    view?.findViewById<EditText>(R.id.addMobile)?.text?.clear()
+                    view?.findViewById<Spinner>(R.id.startTime)?.setSelection(0)
+                    view?.findViewById<Spinner>(R.id.startMeridium)?.setSelection(0)
+                    view?.findViewById<Spinner>(R.id.endTime)?.setSelection(0)
+                    view?.findViewById<Spinner>(R.id.endMeridium)?.setSelection(0)
+                    view?.findViewById<Spinner>(R.id.addCategory)?.setSelection(0)
+                    view?.findViewById<Spinner>(R.id.addType)?.setSelection(0)
+                    view?.findViewById<ImageView>(R.id.imageFood)?.setImageDrawable(null)
+                    Toast.makeText(requireContext(), "Ad is posted", Toast.LENGTH_LONG).show()
+                    succesmsg.text="Ad is posted"
+                }.addOnFailureListener { err ->
+                    Toast.makeText(requireContext(), "Error ${err.message}", Toast.LENGTH_LONG)
+                        .show()
+                }
+        }
     }
 
 
