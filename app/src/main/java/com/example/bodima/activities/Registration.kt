@@ -52,4 +52,10 @@ class Registration : AppCompatActivity() {
             }
         }
     }
+
+    fun setFirebaseAuth(auth: FirebaseAuth) {
+        firebaseAuth = auth
+    }
+
+
 }
