@@ -64,7 +64,6 @@ class RegistrationTest {
         // Assert
         val toast = ShadowToast.getLatestToast()
         assertEquals("Password is not matching", ShadowToast.getTextOfLatestToast())
-
     }
 
     @Test
