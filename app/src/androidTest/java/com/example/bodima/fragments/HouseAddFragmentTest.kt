@@ -39,37 +39,52 @@ class HouseAddFragmentTest {
 
 
     @Test
-    fun testAddLocationData() {
-//        val location = "Matara"
-//        val beds = 6
-//        val bath = 7
-//        val address = "Matara,Akuressa"
-//        val title = "Super Room"
-//        val price = 5000
-//        val mobile = "0771347786"
-//        val description = "ok"
-//        val dropdown ="Home"
-//
-//        onView(withId(R.id.locationtext)).perform(typeText(location))
-//        onView(withId(R.id.bedstext)).perform(typeText(beds.toString()))
-//        onView(withId(R.id.bathtext)).perform(typeText(bath.toString()))
-//        onView(withId(R.id.addresstext)).perform(typeText(address))
-//        onView(withId(R.id.titletext)).perform(typeText(title))
-//        onView(withId(R.id.pricetext)).perform(typeText(price.toString()))
-//        onView(withId(R.id.mobiletext)).perform(typeText(mobile))
-//        onView(withId(R.id.descriptiontext)).perform(typeText(description))
-//        onView(withId(R.id.housedropdown)).perform(typeText(dropdown))
-        Espresso.closeSoftKeyboard()
-//      onView(withId(R.id.postBtn)).perform(click())
+    fun testAllFieldToast() {
 
-        // Assert that the toast message is displayed
-        // onView(withId(R.id.postBtn)).perform(scrollTo(), click());
+        Espresso.closeSoftKeyboard()
+
         Thread.sleep(1000); // Wait for 1 second before checking toast message
         onView(withText("Please fill in all fields"))
+            .inRoot(isSystemAlertWindow())
+            .check(matches(isDisplayed()));
+
+    }
+
+
+    @Test
+    fun testmobileInvalidToast() {
+
+        Espresso.closeSoftKeyboard()
+
+        Thread.sleep(1000); // Wait for 1 second before checking toast message
+        onView(withText("Please enter a valid phone number with 10 digits"))
+            .inRoot(isSystemAlertWindow())
+            .check(matches(isDisplayed()));
+
+    }
+
+
+    @Test
+    fun testPostToast() {
+
+
+        Thread.sleep(1000); // Wait for 1 second before checking toast message
+        onView(withText("Your Ad is Posted"))
             .inRoot(isSystemAlertWindow())
             .check(matches(isDisplayed()));
 
 
     }
 
+    @Test
+    fun testCategoryToast() {
+
+
+        Thread.sleep(1000); // Wait for 1 second before checking toast message
+        onView(withText(" Please Select Valid Category"))
+            .inRoot(isSystemAlertWindow())
+            .check(matches(isDisplayed()));
+
+
+    }
 }
