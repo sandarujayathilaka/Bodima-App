@@ -181,8 +181,7 @@ class HouseAddFragment : Fragment() {
                     val bytes = stream.toByteArray()
                     sImage = Base64.encodeToString(bytes, Base64.DEFAULT)
                     // Display the selected image in an ImageView
-//                val image = view?.findViewById<ImageView>(R.id.imageFood)
-//                view.image.setImageBitmap(bitmap)
+
                     val image = view?.findViewById<ImageView>(R.id.uploadimg)
                     image?.setImageBitmap(bitmap)
                     // Convert the image to Base64 and save it to your variable here

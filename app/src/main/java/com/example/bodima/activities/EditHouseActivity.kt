@@ -112,7 +112,7 @@ class EditHouseActivity : AppCompatActivity() {
 
                     }
                 } else {
-                    // Handle the case where the food item with the given foodId doesn't exist
+                    // Handle the case where the house with the given houseid doesn't exist
                 }
             }
 
@@ -186,7 +186,7 @@ class EditHouseActivity : AppCompatActivity() {
                     // Data updated successfully
                     Toast.makeText(this, "House updated successfully", Toast.LENGTH_SHORT).show()
 
-// Create an Intent to launch the RecyclerFood activity
+// Create an Intent to launch the RecyclerHouse activity
                     val intent = Intent(this, RecyclerUserHouseActivity::class.java)
 // Pass the selected category value as an extra
 
@@ -251,11 +251,10 @@ class EditHouseActivity : AppCompatActivity() {
                     val bytes = stream.toByteArray()
                     sImage = Base64.encodeToString(bytes, Base64.DEFAULT)
                     // Display the selected image in an ImageView
-//                val image = view?.findViewById<ImageView>(R.id.imageFood)
-//                view.image.setImageBitmap(bitmap)
+
                     val image = findViewById<ImageView>(R.id.uploadimgEdit)
                     image?.setImageBitmap(bitmap)
-                    // Convert the image to Base64 and save it to your variable here
+                    // Convert the image to Base64 and save it to variable here
                     up = 1
                     Toast.makeText(this, "Image selected from gallery", Toast.LENGTH_LONG).show()
                 } else {

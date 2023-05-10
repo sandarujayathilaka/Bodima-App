@@ -46,7 +46,7 @@ class SingleHouseActivity : AppCompatActivity() {
         sinprice = findViewById(R.id.singleprice)
 
 
-        // retrieve food item data from Firebase Realtime Database
+        // retrieve house item data from Firebase Realtime Database
         val database = Firebase.database
         val myRef = database.reference.child("House")
         val query = myRef.orderByChild("id").equalTo(houseId)
@@ -94,7 +94,7 @@ class SingleHouseActivity : AppCompatActivity() {
 
                     }
                 } else {
-                    // Handle the case where the food item with the given foodId doesn't exist
+                    // Handle the case where the house item with the given houseId doesn't exist
                 }
             }
 

@@ -91,7 +91,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                                             override fun onItemClick(item: House) {
 
 
-                                                //SingleFood//
+                                                //Singlehouse
                                                 val intent = Intent(
                                                     this@RecyclerUserHouseActivity,
                                                     SingleHouseActivity::class.java
