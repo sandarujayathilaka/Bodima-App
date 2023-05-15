@@ -24,7 +24,7 @@ class Registration : AppCompatActivity() {
         binding.gotologin.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-            Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Password is matching", Toast.LENGTH_SHORT).show()
         }
         binding.button.setOnClickListener {
             val email = binding.emailEt.text.toString()

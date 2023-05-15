@@ -125,10 +125,14 @@ class AddFood : Fragment() {
         val foodCategory = view?.findViewById<Spinner>(R.id.addCategory)?.selectedItem.toString()
         val foodType = view?.findViewById<Spinner>(R.id.addType)?.selectedItem.toString()
 
-        if(foodName.isNullOrEmpty() || foodDescription.isNullOrEmpty() || foodPrice.isNullOrEmpty() || foodMobile.isNullOrEmpty() || foodMobile.length != 10 ||
+        if(foodName.isNullOrEmpty() || foodDescription.isNullOrEmpty() || foodPrice.isNullOrEmpty() || foodMobile.isNullOrEmpty() ||
             foodStartTime.isNullOrEmpty() || foodMeridiumStart.isNullOrEmpty() || foodEndTime.isNullOrEmpty() || foodAddress.isNullOrEmpty() ||
             foodCategory.isNullOrEmpty() || foodType.isNullOrEmpty()){
             Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+        }
+        else if(foodMobile.length != 10) {
+
+            Toast.makeText(context, "Please enter a valid phone number with 10 digits", Toast.LENGTH_SHORT).show()
         }
 
 
