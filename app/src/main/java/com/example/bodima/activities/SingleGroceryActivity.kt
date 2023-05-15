@@ -74,7 +74,7 @@ class SingleGroceryActivity : AppCompatActivity() {
 
                         val title = snapshot.child("title").getValue(String::class.java)
                         val price = snapshot.child("price").getValue(String::class.java)?.toLong()
-                        val discount = snapshot.child("discount").getValue(String::class.java)
+                        val discount = snapshot.child("discount").getValue(String::class.java)?.toLong()
                         val subtitle = snapshot.child("subtitle").getValue(String::class.java)
                         val tpNO = snapshot.child("tpNO").getValue(String::class.java)
                         val locate = snapshot.child("locate").getValue(String::class.java)
@@ -90,7 +90,7 @@ class SingleGroceryActivity : AppCompatActivity() {
                         // Set the retrieved data to the corresponding UI elements
                         sinGrotitle.text = title
                         sinGroprice.text = price?.toString()
-                        sindiscount.text = discount
+                        sindiscount.text = discount?.toString()
                         sinGrosubtitle.text = subtitle
                         sinGrotpNO.text = tpNO
                         sinGrolocate.text = locate
@@ -113,7 +113,7 @@ class SingleGroceryActivity : AppCompatActivity() {
                         increase.setOnClickListener {
                             quantityValue += 1
                             quantity.text = quantityValue.toString()
-                            val newTotalValue = quantityValue * price!!
+                            val newTotalValue = quantityValue * (price!!-(price!!*discount!!/100))
                             total.text = newTotalValue.toString()
                         }
 
@@ -122,7 +122,7 @@ class SingleGroceryActivity : AppCompatActivity() {
                             if (quantityValue > 1) {
                                 quantityValue -= 1
                                 quantity.text = quantityValue.toString()
-                                val newTotalValue = quantityValue * price!!
+                                val newTotalValue = quantityValue * (price!!-(price!!*discount!!/100))
                                 total.text = newTotalValue.toString()
                             }
                         }

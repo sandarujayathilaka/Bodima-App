@@ -5,14 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.SearchView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bodima.R
+import com.example.bodima.adapters.FoodListAdapter
 import com.example.bodima.adapters.GroceryListAdapter
+import com.example.bodima.models.Foods
 import com.example.bodima.models.Grocery
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -21,6 +20,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import kotlin.collections.ArrayList
 
 class RecyclerUserGroceryActivity : AppCompatActivity() {
 
@@ -30,6 +31,11 @@ class RecyclerUserGroceryActivity : AppCompatActivity() {
     private lateinit var groceryCategory: Spinner
     private lateinit var totalvalue: TextView
     private lateinit var search: SearchView
+    private lateinit var tempArrayList: ArrayList<Grocery>
+    private lateinit var resultvalue: TextView
+
+
+
 
     companion object {
         @JvmField
@@ -48,6 +54,10 @@ class RecyclerUserGroceryActivity : AppCompatActivity() {
         groceryArrayList = arrayListOf()
         groceryRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        groceryRecyclerView.hasFixedSize()
+
+        tempArrayList = arrayListOf()
+        val locale = Locale.getDefault()
         var selectedHouseCate = "All"
 
         groceryCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -66,7 +76,49 @@ class RecyclerUserGroceryActivity : AppCompatActivity() {
         groceryCategory.setSelection(0)
 
 
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                tempArrayList.clear()
+
+                val searchtext = newText!!.toLowerCase(locale)
+
+                if (searchtext.isNotEmpty()) {
+                    groceryArrayList.forEach {
+                        if (it.title!!.toLowerCase(locale).contains(searchtext) ||
+                            it.locate!!.toLowerCase(locale).contains(searchtext))  {
+                            tempArrayList.add(it)
+                            totalvalue.text = tempArrayList.size.toString()
+                        }
+                    }
+                    if (tempArrayList.isEmpty()) {
+                        totalvalue.text = "0"
+                        Toast.makeText(this@RecyclerUserGroceryActivity, "No result found", Toast.LENGTH_SHORT).show()
+                    }
+
+                    groceryRecyclerView.adapter!!.notifyDataSetChanged()
+
+
+                } else {
+
+                    tempArrayList.clear()
+                    tempArrayList.addAll(groceryArrayList)
+                    totalvalue.text = tempArrayList.size.toString()
+                    groceryRecyclerView.adapter!!.notifyDataSetChanged()
+                }
+                return false
+            }
+        })
+
+
+
+
     }
+
+
 
     private fun gethouseData(selectedHouseCate: String) {
         val database = Firebase.database
@@ -80,26 +132,25 @@ class RecyclerUserGroceryActivity : AppCompatActivity() {
         when (selectedHouseCate) {
             "All" -> {
                 query.addListenerForSingleValueEvent(object : ValueEventListener {
+//
                     override fun onDataChange(snapshot: DataSnapshot) {
                         groceryArrayList.clear() // clear the previous data from the list
+                        tempArrayList.clear()
                         if (snapshot.exists()) {
-                            for (grocerysnapshot in snapshot.children) {
-                                val item = grocerysnapshot.getValue(Grocery::class.java)
+                            for (foodsnapshot in snapshot.children) {
+                                val item = foodsnapshot.getValue(Grocery::class.java)
                                 groceryArrayList.add(item!!)
                             }
+                            tempArrayList.addAll(groceryArrayList)
                             groceryRecyclerView.adapter = GroceryListAdapter(
-                                groceryArrayList,
+                                tempArrayList,
                                 object : GroceryListAdapter.OnItemClickListener {
                                     override fun onItemClick(item: Grocery) {
 
-
-                                        //SingleFood//
-                                        val intent = Intent(
-                                            this@RecyclerUserGroceryActivity,
-                                            SingleGroceryActivity::class.java
-                                        )
-                                        val houseid: String? = item.id
-                                        intent.putExtra("itemId", houseid?.toString())
+                                        val intent =
+                                        Intent(this@RecyclerUserGroceryActivity, SingleGroceryActivity::class.java)
+                                        val foodId: String? = item.id
+                                        intent.putExtra("itemId", foodId?.toString())
                                         startActivity(intent)
                                     }
                                 })

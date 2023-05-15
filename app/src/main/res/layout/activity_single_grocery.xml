@@ -17,11 +17,13 @@
             android:layout_width="409dp"
             android:layout_height="1dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="49dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/GrobutCall" />
 
@@ -39,14 +41,14 @@
             android:id="@+id/singleGrotpNO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="28dp"
-            android:text="Contact"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="52dp"
 
+            android:text="Contact"
             android:textColor="#0C0C0C"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singlediscount" />
+            app:layout_constraintTop_toBottomOf="@+id/singlediscoutstag" />
 
         <TextView
             android:id="@+id/Grosingletitle"
@@ -61,64 +63,89 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singlegroceryimage" />
 
+
         <TextView
             android:id="@+id/Grosingleprice"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="52dp"
             android:text="100"
             android:textColor="#E60F0F"
             android:textSize="24sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintHorizontal_bias="0.177"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Grosingletitle" />
+
+
+        <TextView
+            android:id="@+id/singlemobilestag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:text="Mobile :"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Grosingleprice" />
 
         <TextView
             android:id="@+id/singlesubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="Subtitle :"
+            android:layout_marginTop="64dp"
+            android:text="Subtitle "
             android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Grosingleprice" />
+            app:layout_constraintTop_toBottomOf="@+id/singlegroceryimage" />
 
         <TextView
             android:id="@+id/singleabout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:text="About :"
+            android:layout_width="254dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="24dp"
+            android:text="About "
             android:textColor="#0C0C0C"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singleGrolocate" />
 
+        <Button
+            android:id="@+id/grobtnIncrease"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/btn"
+            android:text="+"
+            app:layout_constraintStart_toEndOf="@+id/groceryQuantityDigit"
+            app:layout_constraintTop_toBottomOf="@+id/singleabout" />
 
         <TextView
             android:id="@+id/foodQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
             android:text="Quantity"
             android:textColor="#0C0C0C"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singleabout" />
 
-
         <Button
             android:id="@+id/grobtnDecrease"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="36dp"
             android:backgroundTint="@color/btn"
             android:text="-"
             app:layout_constraintStart_toEndOf="@+id/foodQuantity"
@@ -128,32 +155,31 @@
             android:id="@+id/groceryQuantityDigit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="40dp"
             android:text="1"
             android:textColor="#0C0C0C"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/grobtnDecrease"
             app:layout_constraintTop_toBottomOf="@+id/singleabout" />
 
-        <Button
-            android:id="@+id/grobtnIncrease"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="14dp"
-            android:backgroundTint="@color/btn"
-            android:text="+"
-            app:layout_constraintStart_toEndOf="@+id/groceryQuantityDigit"
-            app:layout_constraintTop_toBottomOf="@+id/singleabout" />
-
+        <TextView
+            android:id="@+id/grototalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="100"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/total"
+            app:layout_constraintTop_toTopOf="@+id/total" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
             android:text="Total : "
             android:textColor="#0C0C0C"
             android:textSize="24sp"
@@ -161,70 +187,127 @@
             app:layout_constraintTop_toBottomOf="@+id/singleabout" />
 
 
-        <TextView
-            android:id="@+id/grototalValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="100"
-            android:textColor="#0C0C0C"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/total"
-            app:layout_constraintTop_toTopOf="@+id/total" />
         <Button
             android:id="@+id/GrobutCall"
             android:layout_width="200dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/black"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/btn"
             android:text="Call"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singleGrolocate" />
+            app:layout_constraintTop_toBottomOf="@+id/groceryQuantityDigit"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tagDiscount"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="36dp"
+            android:background="#36D51A"
+            android:text="% "
+            android:textAlignment="center"
+            android:textColor="#FBFBFB"
+            android:textSize="34sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlegroceryimage" />
 
         <TextView
             android:id="@+id/singlediscount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:text="Discount :"
-            android:textColor="#0C0C0C"
-            android:textSize="24sp"
+            android:layout_marginTop="36dp"
+            android:background="#36D61A"
+            android:text="  4"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tagDiscount"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singlesubtitle" />
+            app:layout_constraintTop_toBottomOf="@+id/singlegroceryimage" />
+
+        <TextView
+            android:id="@+id/singlediscoutstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="Discout Rate"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlediscount" />
 
         <TextView
             android:id="@+id/tagPrice"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="52dp"
             android:text="Rs "
             android:textColor="#E60F0F"
             android:textSize="24sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintHorizontal_bias="0.063"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Grosingletitle" />
+
+
+        <TextView
+            android:id="@+id/singlelocationtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Location:"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlemobilestag" />
+
+        <TextView
+            android:id="@+id/singlebedroomstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="About :"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singlelocationtag" />
 
         <TextView
             android:id="@+id/singleGrolocate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="150dp"
-            android:text="Location : "
+            android:text="Location  "
             android:textColor="#0C0C0C"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/GrobutCall"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singleGrotpNO" />
+            app:layout_constraintTop_toBottomOf="@+id/singleGrotpNO"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
