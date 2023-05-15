@@ -131,50 +131,6 @@ class AddFood : Fragment() {
             Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
         }
 
-        if (foodName.isNullOrEmpty()) {
-            requireView().findViewById<EditText>(R.id.addFood)?.error = "Please enter the food name"
-        }
-        if (foodDescription.isNullOrEmpty()) {
-            requireView().findViewById<EditText>(R.id.addDesc)?.error = "Please enter the food name"
-        }
-        if (foodPrice.isNullOrEmpty()) {
-            requireView().findViewById<EditText>(R.id.addPrice)?.error = "Please enter the food price"
-        }
-
-        if (foodMobile.isNullOrEmpty() || foodMobile.length != 10) {
-            requireView().findViewById<EditText>(R.id.addMobile)?.error = "Please enter a valid 10 digit mobile number"
-        }
-
-
-        if (foodStartTime.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select start time", Toast.LENGTH_SHORT).show()
-        }
-        if (foodMeridiumStart.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select start meridium", Toast.LENGTH_SHORT).show()
-        }
-        if (foodEndTime.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select end time", Toast.LENGTH_SHORT).show()
-        }
-        if (foodMeridiumEnd.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select end meridium", Toast.LENGTH_SHORT).show()
-        }
-        if (foodAddress.isNullOrEmpty()) {
-            requireView().findViewById<EditText>(R.id.addAddress)?.error = "Please enter the address"
-        }
-
-        if (foodCategory.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select food category", Toast.LENGTH_SHORT).show()
-        }
-
-        if (foodType.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "Please select food type", Toast.LENGTH_SHORT).show()
-        }
-        if (sImage.isNullOrEmpty()) {
-            val imageFood = requireView().findViewById<ImageView>(R.id.imageFood)
-            imageFood.contentDescription = "Please select the image"
-        }
-
-
 
         else {
             val foodId = foodDbRef.push().key!!

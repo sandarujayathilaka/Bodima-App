@@ -46,7 +46,6 @@ class AddFoodTest {
     @Test
     fun testAllDataIsNull() {
         Espresso.closeSoftKeyboard()
-        onView(withId(R.id.postbtn)).perform(scrollTo(), click());
         Thread.sleep(1000); // Wait for 1 second before checking toast message
         onView(withText("Please fill all the fields"))
             .inRoot(isSystemAlertWindow())
@@ -61,7 +60,7 @@ class AddFoodTest {
 
 
         Espresso.closeSoftKeyboard()
-        onView(withId(R.id.postbtn)).perform(scrollTo(), click());
+
         Thread.sleep(1000); // Wait for 1 second before checking toast message
         onView(withText("Ad is posted"))
             .inRoot(isSystemAlertWindow())
@@ -73,7 +72,6 @@ class AddFoodTest {
 
 
         Espresso.closeSoftKeyboard()
-        onView(withId(R.id.addMobile)).perform(scrollTo(), click());
         Thread.sleep(1000); // Wait for 1 second before checking toast message
         onView(withText("Please enter a valid 10 digit mobile number"))
             .inRoot(isSystemAlertWindow())
