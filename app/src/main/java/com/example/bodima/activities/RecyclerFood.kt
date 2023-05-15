@@ -129,6 +129,7 @@ class RecyclerFood : AppCompatActivity() {
                 query.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         foodArrayList.clear() // clear the previous data from the list
+                        tempArrayList.clear()
                         if (snapshot.exists()) {
                             for (foodsnapshot in snapshot.children) {
                                 val item = foodsnapshot.getValue(Foods::class.java)
