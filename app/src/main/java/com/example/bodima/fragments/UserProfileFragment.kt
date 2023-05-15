@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.bodima.R
 import com.example.bodima.activities.RecyclerUserFood
+import com.example.bodima.activities.RecyclerUserFurnitureActivity
 import com.example.bodima.activities.RecyclerUserGroceryActivity
 import com.example.bodima.activities.RecyclerUserHouseActivity
 
@@ -53,7 +54,7 @@ class UserProfileFragment : Fragment() {
 
         FurnitureEdit.setOnClickListener{
 
-            val intent = Intent(activity, RecyclerUserHouseActivity::class.java)
+            val intent = Intent(activity, RecyclerUserFurnitureActivity::class.java)
             startActivity(intent)
 
         }
