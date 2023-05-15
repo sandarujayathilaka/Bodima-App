@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.SearchView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bodima.R
@@ -20,6 +17,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import kotlin.collections.ArrayList
 
 class RecyclerUserHouseActivity : AppCompatActivity() {
 
@@ -29,6 +28,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
     private lateinit var houseCategory: Spinner
     private lateinit var totalvalue: TextView
     private lateinit var search: SearchView
+    private lateinit var tempArrayList: ArrayList<House>
 
     companion object {
         @JvmField
@@ -45,6 +45,52 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
         search = findViewById(R.id.housesearchUser)
         houseArrayList = arrayListOf()
         houseRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        tempArrayList = arrayListOf()
+        val locale = Locale.getDefault()
+
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Refresh the list with the updated search query
+                tempArrayList.clear()
+
+                val searchtext = newText!!.toLowerCase(locale)
+
+                if (searchtext.isNotEmpty()) {
+                    houseArrayList.forEach {
+                        if (it.location!!.toLowerCase(locale).contains(searchtext) ||
+                            it.title!!.toLowerCase(locale).contains(searchtext))  {
+                            tempArrayList.add(it)
+                            totalvalue.text = tempArrayList.size.toString()
+                        }
+                    }
+                    if (tempArrayList.isEmpty()) {
+                        totalvalue.text = "0"
+                        Toast.makeText(this@RecyclerUserHouseActivity, "No result found", Toast.LENGTH_SHORT).show()
+                    }
+
+                    houseRecyclerView.adapter!!.notifyDataSetChanged()
+
+
+                } else {
+
+                    tempArrayList.clear()
+                    tempArrayList.addAll(houseArrayList)
+                    totalvalue.text = tempArrayList.size.toString()
+                    houseRecyclerView.adapter!!.notifyDataSetChanged()
+                }
+
+
+                return false
+            }
+        })
+
+
 
         var selectedHouseCate = "All"
 
@@ -80,13 +126,15 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                         query.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 houseArrayList.clear() // clear the previous data from the list
+                                tempArrayList.clear()
                                 if (snapshot.exists()) {
                                     for (housesnapshot in snapshot.children) {
                                         val item = housesnapshot.getValue(House::class.java)
                                         houseArrayList.add(item!!)
                                     }
+                                    tempArrayList.addAll(houseArrayList)
                                     houseRecyclerView.adapter = HouseListAdapter(
-                                        houseArrayList,
+                                        tempArrayList,
                                         object : HouseListAdapter.OnItemClickListener {
                                             override fun onItemClick(item: House) {
 
@@ -116,6 +164,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                         query.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 houseArrayList.clear() // clear the previous data from the list
+                                tempArrayList.clear()
                                 if (snapshot.exists()) {
                                     for (housesnapshot in snapshot.children) {
                                         val item = housesnapshot.getValue(House::class.java)
@@ -123,8 +172,9 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                                             houseArrayList.add(item)
                                         }
                                     }
+                                    tempArrayList.addAll(houseArrayList)
                                     houseRecyclerView.adapter = HouseListAdapter(
-                                        houseArrayList,
+                                        tempArrayList,
                                         object : HouseListAdapter.OnItemClickListener {
                                             override fun onItemClick(item: House) {
 
@@ -151,6 +201,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                         query.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 houseArrayList.clear() // clear the previous data from the list
+                                tempArrayList.clear()
                                 if (snapshot.exists()) {
                                     for (housesnapshot in snapshot.children) {
                                         val item = housesnapshot.getValue(House::class.java)
@@ -158,8 +209,9 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                                             houseArrayList.add(item)
                                         }
                                     }
+                                    tempArrayList.addAll(houseArrayList)
                                     houseRecyclerView.adapter = HouseListAdapter(
-                                        houseArrayList,
+                                        tempArrayList,
                                         object : HouseListAdapter.OnItemClickListener {
                                             override fun onItemClick(item: House) {
 
@@ -187,6 +239,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                         query.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 houseArrayList.clear() // clear the previous data from the list
+                                tempArrayList.clear()
                                 if (snapshot.exists()) {
                                     for (housesnapshot in snapshot.children) {
                                         val item = housesnapshot.getValue(House::class.java)
@@ -194,8 +247,9 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                                             houseArrayList.add(item)
                                         }
                                     }
+                                    tempArrayList.addAll(houseArrayList)
                                     houseRecyclerView.adapter = HouseListAdapter(
-                                        houseArrayList,
+                                        tempArrayList,
                                         object : HouseListAdapter.OnItemClickListener {
                                             override fun onItemClick(item: House) {
 
