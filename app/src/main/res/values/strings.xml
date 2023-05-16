@@ -20,6 +20,13 @@
         <item>Home</item>
     </string-array>
 
+    <string-array name="f_all">
+        <item>All</item>
+        <item>Used</item>
+        <item>Brand-new</item>
+        <item>Reconditioned</item>
+    </string-array>
+
     <string-array name="time">
         <item></item>
         <item>1</item>
