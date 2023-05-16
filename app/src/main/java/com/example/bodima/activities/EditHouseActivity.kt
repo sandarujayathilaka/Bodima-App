@@ -13,7 +13,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
 import android.widget.*
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+//import androidx.compose.ui.tooling.data.EmptyGroup.location
 import androidx.core.content.ContextCompat
 import com.example.bodima.R
 import com.google.firebase.auth.FirebaseAuth
@@ -112,7 +114,7 @@ class EditHouseActivity : AppCompatActivity() {
 
                     }
                 } else {
-                    // Handle the case where the food item with the given foodId doesn't exist
+                    // Handle the case where the house with the given houseid doesn't exist
                 }
             }
 
@@ -130,6 +132,7 @@ class EditHouseActivity : AppCompatActivity() {
 
         }
         updateBtn.setOnClickListener {
+
             val id: String? = intent.getStringExtra("houseId").toString()
             val houseRef = FirebaseDatabase.getInstance().getReference("House").child(id ?: "")
 
@@ -153,54 +156,75 @@ class EditHouseActivity : AppCompatActivity() {
             val newCategory = editCategory.selectedItem.toString().trim()
             val newemail = userEmail
 
-            val houseimg:String
+            val houseimg: String
 
-            if(up == 1){
-                houseimg = sImage?:""
-            }else{
-                houseimg = defaultImage ?:""
+            if (up == 1) {
+                houseimg = sImage ?: ""
+            } else {
+                houseimg = defaultImage ?: ""
             }
 
-            // Create a HashMap to update the data
-            val houseUpdates = hashMapOf<String, Any>(
+
+            if (newLocation.isEmpty() || newBeds.isEmpty() || newBaths.isEmpty() || newAddress.isEmpty() ||
+                newTitle.isEmpty() || newPrice.isEmpty() || newMobile.isEmpty() || newDescription.isEmpty()
+
+            ) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+
+            } else if (newCategory == "Select Category") {
+
+                Toast.makeText(this, "Please Select Valid Category", Toast.LENGTH_SHORT).show()
+
+            } else if (newMobile.length != 10) {
+
+                Toast.makeText(
+                    this,
+                    "Please enter a valid phone number with 10 digits",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+
+                // Create a HashMap to update the data
+                val houseUpdates = hashMapOf<String, Any>(
 
 
+                    "id" to id!!,
+                    "title" to newTitle,
+                    "price" to newPrice,
+                    "description" to newDescription,
+                    "mobile" to newMobile,
+                    "address" to newAddress,
+                    "baths" to newBaths,
+                    "beds" to newBeds,
+                    "location" to newLocation,
+                    "category" to newCategory,
+                    "houseimg" to houseimg,
+                    "email" to newemail
+                )
 
-                "id" to id!!,
-                "title" to newTitle,
-                "price" to newPrice,
-                "description" to newDescription,
-                "mobile" to newMobile,
-                "address" to newAddress,
-                "baths" to newBaths,
-                "beds" to newBeds,
-                "location" to newLocation,
-                "category" to newCategory,
-                "houseimg" to houseimg,
-                "email" to newemail
-            )
+                // Update the data in the database
+                houseRef.updateChildren(houseUpdates)
+                    .addOnSuccessListener {
+                        // Data updated successfully
+                        Toast.makeText(this, "House updated successfully", Toast.LENGTH_SHORT)
+                            .show()
 
-            // Update the data in the database
-            houseRef.updateChildren(houseUpdates)
-                .addOnSuccessListener {
-                    // Data updated successfully
-                    Toast.makeText(this, "House updated successfully", Toast.LENGTH_SHORT).show()
-
-// Create an Intent to launch the RecyclerFood activity
-                    val intent = Intent(this, RecyclerUserHouseActivity::class.java)
+// Create an Intent to launch the RecyclerHouse activity
+                        val intent = Intent(this, RecyclerUserHouseActivity::class.java)
 // Pass the selected category value as an extra
 
-                    startActivity(intent)
-                    finish() // Close the current activity
+                        startActivity(intent)
+                        finish() // Close the current activity
 
 
-                    // finish() // Close the activity
-                }
-                .addOnFailureListener {
-                    // Failed to update the data
-                    Toast.makeText(this, "Failed to update house", Toast.LENGTH_SHORT).show()
-                }
+                        // finish() // Close the activity
+                    }
+                    .addOnFailureListener {
+                        // Failed to update the data
+                        Toast.makeText(this, "Failed to update house", Toast.LENGTH_SHORT).show()
+                    }
             }
+        }
 
 
        }
@@ -251,11 +275,10 @@ class EditHouseActivity : AppCompatActivity() {
                     val bytes = stream.toByteArray()
                     sImage = Base64.encodeToString(bytes, Base64.DEFAULT)
                     // Display the selected image in an ImageView
-//                val image = view?.findViewById<ImageView>(R.id.imageFood)
-//                view.image.setImageBitmap(bitmap)
+
                     val image = findViewById<ImageView>(R.id.uploadimgEdit)
                     image?.setImageBitmap(bitmap)
-                    // Convert the image to Base64 and save it to your variable here
+                    // Convert the image to Base64 and save it to variable here
                     up = 1
                     Toast.makeText(this, "Image selected from gallery", Toast.LENGTH_LONG).show()
                 } else {

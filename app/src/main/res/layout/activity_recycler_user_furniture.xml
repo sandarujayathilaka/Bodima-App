@@ -27,17 +27,17 @@
         android:textColor="#040404"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f_furnituresearchUser" />
+        app:layout_constraintTop_toBottomOf="@+id/furnituretypeUser" />
 
     <Spinner
         android:id="@+id/furnituretypeUser"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="-5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:entries="@array/all"
-        app:layout_constraintStart_toEndOf="@+id/f_furnituredropdownUser"
-        app:layout_constraintTop_toTopOf="@+id/f_furnituredropdownUser" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_furnituresearchUser" />
 
     <TextView
         android:id="@+id/furnitureresultUser"
@@ -55,12 +55,13 @@
         android:id="@+id/furnitureresultvalueUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
         android:text="0"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/f_furnitureresultUser"
-        app:layout_constraintTop_toTopOf="@+id/furnitureresultUser" />
+        app:layout_constraintStart_toEndOf="@+id/furnitureresultUser"
+        app:layout_constraintTop_toBottomOf="@+id/furnituredropdownUser" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/furniture_itemUser"

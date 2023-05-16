@@ -8,18 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/Background"
         tools:context=".activities.SingleFood">
-        <View
-            android:id="@+id/divider"
-            android:layout_width="409dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="56dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/singlefoodimage"
@@ -31,18 +22,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/singleSupName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Supplier Name : "
-            android:textColor="#0C0C0C"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singleStartTime" />
-
-        <TextView
             android:id="@+id/singlefoodAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +31,7 @@
             android:textColor="#0C0C0C"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singleSupName" />
+            app:layout_constraintTop_toBottomOf="@+id/singleStartTime" />
 
         <TextView
             android:id="@+id/singleStartTime"
@@ -109,16 +88,19 @@
             android:id="@+id/butCall"
             android:layout_width="200dp"
             android:layout_height="55dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="110dp"
             android:backgroundTint="@color/btn"
             android:text="Call"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contact" />
+            app:layout_constraintTop_toBottomOf="@+id/contact"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/singlefoodDescValue"
@@ -221,18 +203,6 @@
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/singleendtime"
             app:layout_constraintTop_toTopOf="@+id/singleendtime" />
-
-        <TextView
-            android:id="@+id/singleSubValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="16dp"
-            android:text="Smith"
-            android:textColor="#0C0C0C"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/singleSupName"
-            app:layout_constraintTop_toTopOf="@+id/singleSupName" />
 
         <TextView
             android:id="@+id/singleAddressValue"
