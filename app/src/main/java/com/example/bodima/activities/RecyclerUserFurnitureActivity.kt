@@ -117,7 +117,7 @@ class RecyclerUserFurnitureActivity : AppCompatActivity() {
                                 if (snapshot.exists()) {
                                     for (furnituresnapshot in snapshot.children) {
                                         val item = furnituresnapshot.getValue(Furniture::class.java)
-                                        if (item?.category == "Annex") {
+                                        if (item?.category == "Used") {
                                             furnitureArrayList.add(item)
                                         }
                                     }
@@ -152,7 +152,7 @@ class RecyclerUserFurnitureActivity : AppCompatActivity() {
                                 if (snapshot.exists()) {
                                     for (furnituresnapshot in snapshot.children) {
                                         val item = furnituresnapshot.getValue(Furniture::class.java)
-                                        if (item?.category == "Single-Room") {
+                                        if (item?.category == "Brand-new") {
                                             furnitureArrayList.add(item)
                                         }
                                     }
@@ -188,7 +188,7 @@ class RecyclerUserFurnitureActivity : AppCompatActivity() {
                                 if (snapshot.exists()) {
                                     for (furnituresnapshot in snapshot.children) {
                                         val item = furnituresnapshot.getValue(Furniture::class.java)
-                                        if (item?.category == "Home") {
+                                        if (item?.category == "Reconditioned") {
                                             furnitureArrayList.add(item)
                                         }
                                     }

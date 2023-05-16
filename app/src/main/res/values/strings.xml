@@ -49,6 +49,13 @@
         <item>Reconditioned</item>
     </string-array>
 
+    <string-array name="f_all">
+        <item>All</item>
+        <item>Used</item>
+        <item>Brand-new</item>
+        <item>Reconditioned</item>
+    </string-array>
+
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="list">MY LIST</string>

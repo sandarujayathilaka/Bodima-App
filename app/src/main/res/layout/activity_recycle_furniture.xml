@@ -18,38 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/furnituredropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Type"
-        android:textColor="#040404"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/furnituresearch" />
-
-    <Spinner
-        android:id="@+id/furnituretype"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="-5dp"
-        android:entries="@array/houseCategory"
-        app:layout_constraintStart_toEndOf="@+id/furnituredropdown"
-        app:layout_constraintTop_toTopOf="@+id/furnituredropdown" />
-
-    <TextView
         android:id="@+id/furnitureresult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:text="Search Result : "
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/furnituredropdown" />
+        app:layout_constraintTop_toBottomOf="@+id/furnituresearch" />
 
     <TextView
         android:id="@+id/furnitureresultvalue"
