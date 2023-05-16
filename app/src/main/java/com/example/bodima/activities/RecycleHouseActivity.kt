@@ -67,7 +67,7 @@ class RecycleHouseActivity : AppCompatActivity() {
                 if (searchtext.isNotEmpty()) {
                     houseArrayList.forEach {
                         if (it.location!!.toLowerCase(locale).contains(searchtext) ||
-                            it.price!!.toLowerCase(locale).contains(searchtext))  {
+                            it.title!!.toLowerCase(locale).contains(searchtext))  {
                             tempArrayList.add(it)
                             resultvalue.text = tempArrayList.size.toString()
                         }
@@ -105,13 +105,15 @@ class RecycleHouseActivity : AppCompatActivity() {
 
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                houseArrayList.clear() // clear the previous data from the list
+               // houseArrayList.clear() // clear the previous data from the list
+               // tempArrayList.clear()
                 if (snapshot.exists()) {
                     for (housesnapshot in snapshot.children) {
                         val item = housesnapshot.getValue(House::class.java)
                         houseArrayList.add(item!!)
                     }
-                    houseRecyclerView.adapter = HouseAdapter(houseArrayList, object : HouseAdapter.OnItemClickListener {
+                    tempArrayList.addAll(houseArrayList)
+                    houseRecyclerView.adapter = HouseAdapter(tempArrayList, object : HouseAdapter.OnItemClickListener {
                         override fun onItemClick(item:House) {
                             val intent = Intent(this@RecycleHouseActivity, SingleHouseActivity::class.java)
                             val houseId: String? = item.id

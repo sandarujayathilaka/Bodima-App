@@ -23,7 +23,7 @@ class SingleFood : AppCompatActivity() {
     private lateinit var description:TextView
     private lateinit var startTime:TextView
     private lateinit var endTime:TextView
-    private lateinit var supplier:TextView
+
     private lateinit var address:TextView
     private lateinit var increase:Button
     private lateinit var decrease:Button
@@ -44,7 +44,6 @@ class SingleFood : AppCompatActivity() {
         description = findViewById(R.id.singlefoodDescValue)
         startTime = findViewById(R.id.singlestartvalue)
         endTime = findViewById(R.id.singleendvalue)
-        supplier = findViewById(R.id.singleSubValue)
         quantity = findViewById(R.id.foodQuantityDigit)
         address = findViewById(R.id.singleAddressValue)
         increase = findViewById(R.id.btnIncrease)
@@ -93,7 +92,7 @@ class SingleFood : AppCompatActivity() {
                         description.text = foodDescription
                         startTime.text = "$foodStartTime $foodMeridiumStart"
                         endTime.text = "$foodEndTime $foodMeridiumEnd"
-                        supplier.text = "Your supplier name" // replace with the actual supplier name
+
                         address.text = foodAddress
                         //call.text = foodMobile // replace with the actual supplier's contact number
                         phone.text = foodMobile
@@ -144,6 +143,7 @@ class SingleFood : AppCompatActivity() {
 
 
     }
+
 }
 
 
