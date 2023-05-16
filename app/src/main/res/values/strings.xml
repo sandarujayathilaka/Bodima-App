@@ -66,6 +66,31 @@
     <string name="Title">Title</string>
     <string name="edittopichome">Edit Place Details</string>
     <string name="caltopic">Budget  Calculator</string>
+    <string name="homeCate">Select a Category</string>
+    <string name="Annexcard">Annexes</string>
+    <string name="roomCard">Single-Room</string>
+    <string name="HomeCard">Homes</string>
+    <string name="Locationhint">Location</string>
+    <string name="bedhint">No of Bed Rooms</string>
+    <string name="bathHint">No of Bathrooms</string>
+    <string name="addresshint">Address</string>
+    <string name="Titlehint">Title</string>
+    <string name="PriceHint">Price</string>
+    <string name="mobilehint">Mobile</string>
+    <string name="DescriptionHint">Description</string>
+    <string name="postbuttontext">POST</string>
+    <string name="newplaceadd">Add a New Place</string>
+    <string name="totalexpence">Total Expenses</string>
+    <string name="NetIncome">Net Income</string>
+    <string name="Accomondationfee">Accomondation Fee</string>
+    <string name="elebill">Electricity Bill Amount</string>
+    <string name="waterbill">Water Bill Amount</string>
+    <string name="days">No of Days</string>
+    <string name="FoodExpe">Food Expences Per Day</string>
+    <string name="trancost">Transpoart Cost per Day</string>
+    <string name="otherexp">Other Expences</string>
+    <string name="MonthlyIncome">Monthly income</string>
+    <string name="Calculatebtntext">Calculate</string>
 
 
     <string-array name="category">

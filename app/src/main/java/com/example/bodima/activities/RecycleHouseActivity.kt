@@ -51,6 +51,7 @@ class RecycleHouseActivity : AppCompatActivity() {
         tempArrayList = arrayListOf()
         val locale = Locale.getDefault()
 
+        //search the homes
         search = findViewById<SearchView>(R.id.housesearch)
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -66,7 +67,7 @@ class RecycleHouseActivity : AppCompatActivity() {
 
                 if (searchtext.isNotEmpty()) {
                     houseArrayList.forEach {
-                        if (it.location!!.toLowerCase(locale).contains(searchtext) ||
+                        if (it.location!!.toLowerCase(locale).contains(searchtext) || //search by location and title
                             it.title!!.toLowerCase(locale).contains(searchtext))  {
                             tempArrayList.add(it)
                             resultvalue.text = tempArrayList.size.toString()

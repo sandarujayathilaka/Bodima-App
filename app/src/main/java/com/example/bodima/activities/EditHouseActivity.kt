@@ -58,6 +58,7 @@ class EditHouseActivity : AppCompatActivity() {
         val myRef = database.reference.child("House")
         val query = myRef.orderByChild("id").equalTo(houseId)
 
+        // set camera permisition
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_CODE)
         }
@@ -79,6 +80,8 @@ class EditHouseActivity : AppCompatActivity() {
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
+
+                    //get already exsists data from database
                     for (snapshot in dataSnapshot.children) {
 
                         val editOldTitle = snapshot.child("title").getValue(String::class.java)
@@ -96,6 +99,8 @@ class EditHouseActivity : AppCompatActivity() {
 
                         val bytes = Base64.decode(editOldimg, Base64.DEFAULT)
                         val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+
+                        //set the data into textfield and image
 
                         editHouseimg.setImageBitmap(bitmap)
                         editTitle.text = editOldTitle
@@ -137,7 +142,7 @@ class EditHouseActivity : AppCompatActivity() {
             val houseRef = FirebaseDatabase.getInstance().getReference("House").child(id ?: "")
 
 
-            // Get the data from the UI elements
+            // Get the data from the UI elements as new input data
 
             val firebaseAuth = FirebaseAuth.getInstance()
             val currentUser = firebaseAuth.currentUser
@@ -164,7 +169,7 @@ class EditHouseActivity : AppCompatActivity() {
                 houseimg = defaultImage ?: ""
             }
 
-
+            //Validate the input fields
             if (newLocation.isEmpty() || newBeds.isEmpty() || newBaths.isEmpty() || newAddress.isEmpty() ||
                 newTitle.isEmpty() || newPrice.isEmpty() || newMobile.isEmpty() || newDescription.isEmpty()
 
@@ -229,7 +234,7 @@ class EditHouseActivity : AppCompatActivity() {
 
        }
 
-
+    //Image Updating
     private fun insert_Image() {
         val options = arrayOf<CharSequence>("Select from Gallery", "Take a Photo")
         val builder = AlertDialog.Builder(this)
@@ -300,6 +305,7 @@ class EditHouseActivity : AppCompatActivity() {
         }
     }
 
+    //Camera Permission giving code
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == CAMERA_PERMISSION_CODE) {

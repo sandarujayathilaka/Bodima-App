@@ -23,7 +23,7 @@ class HouseCategoryFragment : Fragment() {
         val roomCard = view.findViewById<CardView>(R.id.roomcard)
         val homeCard = view.findViewById<CardView>(R.id.homecard)
 
-
+       //set categories to card view
        annexCard.setOnClickListener {
             val intent = Intent(activity, RecycleHouseActivity::class.java)
             intent.putExtra("category", "Annex")

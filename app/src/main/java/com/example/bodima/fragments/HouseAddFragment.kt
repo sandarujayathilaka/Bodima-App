@@ -50,7 +50,7 @@ class HouseAddFragment : Fragment() {
             requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_CODE)
         }
 
-
+        // set the button with ides
         val postbutton = view.findViewById<Button>(R.id.postBtn)
         val imagebutton = view.findViewById<ImageButton>(R.id.uploadbtn)
 
@@ -63,7 +63,7 @@ class HouseAddFragment : Fragment() {
         val firebaseAuth = FirebaseAuth.getInstance()
         val currentUser = firebaseAuth.currentUser
 
-        val userEmail = currentUser?.email ?: ""
+        val userEmail = currentUser?.email ?: "" // set the logged user email
 
 
         val location = view.findViewById<EditText>(R.id.locationtext)
@@ -81,6 +81,8 @@ class HouseAddFragment : Fragment() {
 
 
         postbutton.setOnClickListener {
+
+            //Validate the form data
 
             if (location.text.isEmpty() || beds.text.isEmpty() || baths.text.isEmpty() || address.text.isEmpty() ||
                 title.text.isEmpty() || price.text.isEmpty() || mobile.text.isEmpty() || description.text.isEmpty()
@@ -137,6 +139,7 @@ class HouseAddFragment : Fragment() {
         return view
     }
 
+    //insert Image
     private fun insert_Image() {
         val options = arrayOf<CharSequence>("Select from Gallery", "Take a Photo")
         val builder = AlertDialog.Builder(requireContext())

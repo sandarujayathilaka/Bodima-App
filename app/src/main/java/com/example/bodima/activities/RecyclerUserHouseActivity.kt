@@ -49,6 +49,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
         tempArrayList = arrayListOf()
         val locale = Locale.getDefault()
 
+        //Search the house item
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
@@ -62,6 +63,7 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                 val searchtext = newText!!.toLowerCase(locale)
 
                 if (searchtext.isNotEmpty()) {
+                    //search house item based on location and title
                     houseArrayList.forEach {
                         if (it.location!!.toLowerCase(locale).contains(searchtext) ||
                             it.title!!.toLowerCase(locale).contains(searchtext))  {
@@ -120,7 +122,9 @@ class RecyclerUserHouseActivity : AppCompatActivity() {
                 val userEmail = currentUser?.email ?: ""
 
 
-                var query = myRef.orderByChild("email").equalTo(userEmail)
+                var query = myRef.orderByChild("email").equalTo(userEmail) //check current loged users email
+
+                //Filter Houses based on category
                 when (selectedHouseCate) {
                     "All" -> {
                         query.addListenerForSingleValueEvent(object : ValueEventListener {
