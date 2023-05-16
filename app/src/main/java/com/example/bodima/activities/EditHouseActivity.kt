@@ -53,7 +53,7 @@ class EditHouseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_house)
 
-        houseId = intent.getStringExtra("houseId").toString()
+        houseId = intent.getStringExtra("houseId").toString() //get the specific house Id
         val database = Firebase.database
         val myRef = database.reference.child("House")
         val query = myRef.orderByChild("id").equalTo(houseId)

@@ -105,8 +105,7 @@ class RecycleHouseActivity : AppCompatActivity() {
 
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-               // houseArrayList.clear() // clear the previous data from the list
-               // tempArrayList.clear()
+
                 if (snapshot.exists()) {
                     for (housesnapshot in snapshot.children) {
                         val item = housesnapshot.getValue(House::class.java)
