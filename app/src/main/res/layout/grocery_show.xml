@@ -34,6 +34,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Title :"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/grocery_img" />
@@ -42,14 +44,33 @@
             android:id="@+id/groceryprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="68dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
-            android:text="price :"
+            android:text="price "
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/grocerytitle" />
+            app:layout_constraintTop_toBottomOf="@+id/grocerytitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/rstags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Rs :"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grocerytitle"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/grocerylocation"
@@ -59,6 +80,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             android:text="Location :"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

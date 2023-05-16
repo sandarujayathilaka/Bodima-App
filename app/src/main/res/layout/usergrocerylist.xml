@@ -14,7 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="189dp">
 
         <ImageView
             android:id="@+id/grocery_img_edit"
@@ -34,6 +34,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="Title :"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/grocery_img_edit" />
@@ -42,28 +44,49 @@
             android:id="@+id/groceryprice_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            android:text="price :"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/grocerytitle_edit" />
-
-        <TextView
-            android:id="@+id/grocerylocation_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:text="Location :"
+            android:layout_marginStart="216dp"
+            android:layout_marginBottom="54dp"
+            android:text="price"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/grocery_img_edit"
             app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/rstag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginBottom="32dp"
+            android:text="Rs."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/groceryprice_edit"
+            app:layout_constraintHorizontal_bias="0.796"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grocery_img_edit"
+            app:layout_constraintVertical_bias="0.266" />
+
+        <TextView
+            android:id="@+id/grocerylocation_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:text="Location :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grocery_img_edit"
+            app:layout_constraintVertical_bias="0.482" />
 
         <ImageView
             android:id="@+id/Gro_deletebtn"
@@ -86,7 +109,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Gro_deletebtn"
             app:layout_constraintTop_toBottomOf="@+id/grocery_img_edit"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.111"
             app:srcCompat="@drawable/edit_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

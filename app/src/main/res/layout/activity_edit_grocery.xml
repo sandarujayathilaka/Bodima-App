@@ -48,8 +48,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EditSubtitile"
                 android:layout_width="match_parent"
-                android:inputType="number"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,8 +126,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EditLocation"
                 android:layout_width="match_parent"
-                android:inputType="numberDecimal"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
