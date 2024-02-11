@@ -11,7 +11,9 @@ The Bodima App is designed to streamline the process of finding accommodations a
 
 ## Technologies Used
 
-* MERN Stack
+* Android Studio
+* Kotlin
+* Firebase
 
 ## Preview
 ![alt text](https://github.com/offisystw/portfolio/blob/main/bodima.png?raw=true)
