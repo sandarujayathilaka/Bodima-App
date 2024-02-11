@@ -1,9 +1,18 @@
-# Project Name - BODIMA APP
-# Group Name - BODIMA
-# Batch - 2.1
-### Group Leader - IT21188404 - Jayathilaka H.K.G.S.P. (sandarujayathilaka)
-### Member 2 - IT21224034 - Balaruban Denojan (Denojan)
-### Member 3 - IT21165252 - Kuruppu K.A.G.S.R (GIHAA)
-### Member 4 - IT21187278 - Palliyaguru P.N.A. (NipunPalliyaguru)
+# Pet Shelter Management System
 
+The Bodima App is designed to streamline the process of finding accommodations and associated necessities like food and furniture at budget-friendly prices. After registering, users gain the ability to log in and place their items for sale on the platform, thereby connecting with prospective buyers and searchers directly. Additionally, the app features a budget calculator to help users monitor their monthly expenses and savings.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Main Features 
+* Search items
+* Manage Seller Account
+* Budget Calculator
+
+## Technologies Used
+
+* MERN Stack
+
+## Preview
+![alt text](https://github.com/offisystw/portfolio/blob/main/bodima.png?raw=true)
 
