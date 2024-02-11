@@ -1,4 +1,4 @@
-# Pet Shelter Management System
+# Bodima App
 
 The Bodima App is designed to streamline the process of finding accommodations and associated necessities like food and furniture at budget-friendly prices. After registering, users gain the ability to log in and place their items for sale on the platform, thereby connecting with prospective buyers and searchers directly. Additionally, the app features a budget calculator to help users monitor their monthly expenses and savings.
 
